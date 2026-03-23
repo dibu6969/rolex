@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rolex Academy — Learn Watches</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div id="app">
+
+  <!-- HEADER -->
+  <header>
+    <div class="crown">&#9813;</div>
+    <h1>Rolex Academy</h1>
+    <p class="tagline">Master the world of Rolex watches</p>
+  </header>
+
+  <!-- SCORE BAR -->
+  <div id="scorebar">
+    <span>Score: <strong id="score-display">0</strong></span>
+    <span>Streak: <strong id="streak-display">0</strong> 🔥</span>
+    <span>Level: <strong id="level-display">Novice</strong></span>
+  </div>
+
+  <!-- MAIN MENU -->
+  <section id="menu" class="screen active">
+    <h2>Choose a Module</h2>
+    <div class="module-grid">
+      <button class="module-btn" onclick="startModule('families')">
+        <span class="icon">⌚</span>
+        <strong>Watch Families</strong>
+        <small>Submariner, Daytona, Datejust & more</small>
+      </button>
+      <button class="module-btn" onclick="startModule('nicknames')">
+        <span class="icon">🏷️</span>
+        <strong>Nicknames & Slang</strong>
+        <small>Batman, Pepsi, Hulk & more</small>
+      </button>
+      <button class="module-btn" onclick="startModule('parts')">
+        <span class="icon">🔧</span>
+        <strong>Watch Anatomy</strong>
+        <small>Bezels, dials, crowns & movements</small>
+      </button>
+      <button class="module-btn" onclick="startModule('bands')">
+        <span class="icon">🔗</span>
+        <strong>Bracelets & Bands</strong>
+        <small>Oyster, Jubilee, President & more</small>
+      </button>
+      <button class="module-btn" onclick="startModule('bezels')">
+        <span class="icon">⭕</span>
+        <strong>Bezel Styles</strong>
+        <small>Rotating, fluted, gem-set & more</small>
+      </button>
+      <button class="module-btn" onclick="startModule('prices')">
+        <span class="icon">💰</span>
+        <strong>Price Guessing</strong>
+        <small>How much does it cost?</small>
+      </button>
+    </div>
+    <div class="menu-bottom">
+      <button class="btn-secondary" onclick="startFlashcards()">📚 Flashcard Study Mode</button>
+      <button class="btn-secondary" onclick="startMixedQuiz()">🎲 Mixed Challenge</button>
+    </div>
+  </section>
+
+  <!-- FLASHCARD SCREEN -->
+  <section id="flashcard-screen" class="screen">
+    <div class="screen-header">
+      <button class="back-btn" onclick="showMenu()">← Back</button>
+      <h2 id="fc-module-title">Flashcards</h2>
+      <span id="fc-counter">1 / 10</span>
+    </div>
+    <div class="flashcard-wrap">
+      <div class="flashcard" id="flashcard" onclick="flipCard()">
+        <div class="card-front">
+          <div class="card-label" id="fc-label"></div>
+          <div class="card-question" id="fc-question"></div>
+          <div class="flip-hint">Tap to reveal</div>
+        </div>
+        <div class="card-back">
+          <div class="card-answer" id="fc-answer"></div>
+          <div class="card-detail" id="fc-detail"></div>
+        </div>
+      </div>
+    </div>
+    <div class="fc-controls">
+      <button class="btn-secondary" onclick="prevCard()">← Prev</button>
+      <button class="btn-primary" onclick="nextCard()">Next →</button>
+    </div>
+    <div class="fc-progress">
+      <div class="progress-bar"><div id="fc-progress-fill" class="progress-fill"></div></div>
+    </div>
+  </section>
+
+  <!-- QUIZ SCREEN -->
+  <section id="quiz-screen" class="screen">
+    <div class="screen-header">
+      <button class="back-btn" onclick="showMenu()">← Back</button>
+      <h2 id="quiz-title">Quiz</h2>
+      <span id="quiz-counter">Q 1/10</span>
+    </div>
+    <div id="quiz-question-wrap">
+      <div class="quiz-category" id="quiz-category"></div>
+      <div class="quiz-question" id="quiz-question"></div>
+      <div class="quiz-options" id="quiz-options"></div>
+      <div class="quiz-feedback" id="quiz-feedback"></div>
+    </div>
+    <div class="quiz-controls">
+      <button class="btn-primary hidden" id="next-q-btn" onclick="nextQuestion()">Next Question →</button>
+    </div>
+    <div class="quiz-score-strip">
+      Score: <strong id="quiz-score">0</strong> | Streak: <strong id="quiz-streak">0</strong>
+    </div>
+    <div class="fc-progress">
+      <div class="progress-bar"><div id="quiz-progress-fill" class="progress-fill"></div></div>
+    </div>
+  </section>
+
+  <!-- PRICE GAME SCREEN -->
+  <section id="price-screen" class="screen">
+    <div class="screen-header">
+      <button class="back-btn" onclick="showMenu()">← Back</button>
+      <h2>Price Guessing Game</h2>
+      <span id="price-counter">1/10</span>
+    </div>
+    <div class="price-watch-card">
+      <div class="watch-emoji" id="price-emoji"></div>
+      <h3 id="price-watch-name"></h3>
+      <p class="price-desc" id="price-watch-desc"></p>
+      <div class="price-tag">Retail Price: <span id="price-reveal" class="hidden-price">???</span></div>
+    </div>
+    <div class="price-options" id="price-options"></div>
+    <div class="price-feedback" id="price-feedback"></div>
+    <div class="quiz-controls">
+      <button class="btn-primary hidden" id="next-price-btn" onclick="nextPrice()">Next Watch →</button>
+    </div>
+    <div class="fc-progress">
+      <div class="progress-bar"><div id="price-progress-fill" class="progress-fill"></div></div>
+    </div>
+  </section>
+
+  <!-- RESULTS SCREEN -->
+  <section id="results-screen" class="screen">
+    <div class="results-wrap">
+      <div class="results-crown">&#9813;</div>
+      <h2 id="results-title">Round Complete!</h2>
+      <div class="results-score-big" id="results-score"></div>
+      <div class="results-grade" id="results-grade"></div>
+      <div class="results-message" id="results-message"></div>
+      <div class="results-stats" id="results-stats"></div>
+      <div class="results-buttons">
+        <button class="btn-primary" onclick="retryModule()">Try Again</button>
+        <button class="btn-secondary" onclick="showMenu()">Main Menu</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="data.js"></script>
+<script src="game.js"></script>
+</body>
+</html>
