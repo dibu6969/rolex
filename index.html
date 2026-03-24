@@ -1,165 +1,366 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rolex Academy — Learn Watches</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emilio Dibildox</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<div id="app">
+  <!-- Cursor glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
 
-  <!-- HEADER -->
-  <header>
-    <div class="crown">&#9813;</div>
-    <h1>Rolex Academy</h1>
-    <p class="tagline">Master the world of Rolex watches</p>
-  </header>
+  <!-- Navigation -->
+  <nav id="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-e">E</span><span class="logo-d">D</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#experience" data-text="Experience">Experience</a></li>
+        <li><a href="#leadership" data-text="Leadership">Leadership</a></li>
+        <li><a href="#skills" data-text="Skills">Skills</a></li>
+        <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
+      </ul>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </nav>
 
-  <!-- SCORE BAR -->
-  <div id="scorebar">
-    <span>Score: <strong id="score-display">0</strong></span>
-    <span>Streak: <strong id="streak-display">0</strong> 🔥</span>
-    <span>Level: <strong id="level-display">Novice</strong></span>
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <ul>
+        <li><a href="#experience" class="mobile-link">Experience</a></li>
+        <li><a href="#leadership" class="mobile-link">Leadership</a></li>
+        <li><a href="#skills" class="mobile-link">Skills</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
   </div>
 
-  <!-- MAIN MENU -->
-  <section id="menu" class="screen active">
-    <h2>Choose a Module</h2>
-    <div class="module-grid">
-      <button class="module-btn" onclick="startModule('families')">
-        <span class="icon">⌚</span>
-        <strong>Watch Families</strong>
-        <small>Submariner, Daytona, Datejust & more</small>
-      </button>
-      <button class="module-btn" onclick="startModule('nicknames')">
-        <span class="icon">🏷️</span>
-        <strong>Nicknames & Slang</strong>
-        <small>Batman, Pepsi, Hulk & more</small>
-      </button>
-      <button class="module-btn" onclick="startModule('parts')">
-        <span class="icon">🔧</span>
-        <strong>Watch Anatomy</strong>
-        <small>Bezels, dials, crowns & movements</small>
-      </button>
-      <button class="module-btn" onclick="startModule('bands')">
-        <span class="icon">🔗</span>
-        <strong>Bracelets & Bands</strong>
-        <small>Oyster, Jubilee, President & more</small>
-      </button>
-      <button class="module-btn" onclick="startModule('bezels')">
-        <span class="icon">⭕</span>
-        <strong>Bezel Styles</strong>
-        <small>Rotating, fluted, gem-set & more</small>
-      </button>
-      <button class="module-btn" onclick="startModule('prices')">
-        <span class="icon">💰</span>
-        <strong>Price Guessing</strong>
-        <small>How much does it cost?</small>
-      </button>
+  <!-- Hero -->
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="grid-overlay"></div>
     </div>
-    <div class="menu-bottom">
-      <button class="btn-secondary" onclick="startFlashcards()">📚 Flashcard Study Mode</button>
-      <button class="btn-secondary" onclick="startMixedQuiz()">🎲 Mixed Challenge</button>
+
+    <div class="hero-content">
+
+      <h1 class="hero-name">
+        <span class="name-line" id="scrambleName">Emilio Dibildox</span>
+      </h1>
+
+      <div class="hero-identity reveal-hero">
+        <div class="identity-card">
+          <span class="identity-label">University</span>
+          <span class="identity-val">Northeastern<span class="identity-sub">Class of 2028</span></span>
+        </div>
+        <div class="identity-divider"></div>
+        <div class="identity-card">
+          <span class="identity-label">Studying</span>
+          <span class="identity-val">International Business · Finance · AI</span>
+        </div>
+        <div class="identity-divider"></div>
+        <div class="identity-card">
+          <span class="identity-label">Co-op</span>
+          <span class="identity-val">HarbourVest Partners <span class="status-active">Active</span></span>
+        </div>
+        <div class="identity-divider"></div>
+        <div class="identity-card">
+          <span class="identity-label">Next</span>
+          <span class="identity-val">Pine Tree Equity<span class="identity-sub">Jul 2026</span><span class="status-upcoming">Upcoming</span></span>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#experience" class="btn-primary">
+          <span>Explore My Work</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="#contact" class="btn-ghost">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-text">Scroll</div>
+      <div class="scroll-track"><div class="scroll-thumb"></div></div>
     </div>
   </section>
 
-  <!-- FLASHCARD SCREEN -->
-  <section id="flashcard-screen" class="screen">
-    <div class="screen-header">
-      <button class="back-btn" onclick="showMenu()">← Back</button>
-      <h2 id="fc-module-title">Flashcards</h2>
-      <span id="fc-counter">1 / 10</span>
-    </div>
-    <div class="flashcard-wrap">
-      <div class="flashcard" id="flashcard" onclick="flipCard()">
-        <div class="card-front">
-          <div class="card-label" id="fc-label"></div>
-          <div class="card-question" id="fc-question"></div>
-          <div class="flip-hint">Tap to reveal</div>
+  <!-- Experience -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="section-tag reveal">Career</div>
+      <h2 class="section-title reveal">My <em>Work</em></h2>
+
+      <div class="exp-list">
+
+        <div class="exp-item reveal">
+          <div class="exp-num">01</div>
+          <div class="exp-body">
+            <div class="exp-meta">
+              <span class="exp-date">Jul – Aug 2026</span>
+              <span class="exp-loc">Miami, FL</span>
+            </div>
+            <h3 class="exp-company">Pine Tree Equity Partners <span class="exp-status upcoming">Upcoming</span></h3>
+            <p class="exp-role">Incoming Private Equity Summer Analyst</p>
+          </div>
+          <div class="exp-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
         </div>
-        <div class="card-back">
-          <div class="card-answer" id="fc-answer"></div>
-          <div class="card-detail" id="fc-detail"></div>
+
+        <div class="exp-item reveal">
+          <div class="exp-num">02</div>
+          <div class="exp-body">
+            <div class="exp-meta">
+              <span class="exp-date">Feb – Jun 2026</span>
+              <span class="exp-loc">Boston, MA</span>
+            </div>
+            <h3 class="exp-company">HarbourVest Partners <span class="exp-status active">Active</span></h3>
+            <p class="exp-role">Portfolio Analytics Intern</p>
+          </div>
+          <div class="exp-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-num">03</div>
+          <div class="exp-body">
+            <div class="exp-meta">
+              <span class="exp-date">Sep 2025 – Present</span>
+              <span class="exp-loc">Boston, MA</span>
+              <span class="exp-badge">Active</span>
+            </div>
+            <h3 class="exp-company">Onda</h3>
+            <p class="exp-role">Founder</p>
+            <ul class="exp-bullets">
+              <li>Built MVP using Supabase, Stripe, Vercel, and GitHub — iterated through user testing to refine product workflows</li>
+              <li>Designed end-to-end product flows for user verification, dispute prevention, and payouts</li>
+              <li>Defined trust and risk controls across onboarding, messaging, and ticket transfer</li>
+              <li>Conducted 30+ user interviews to validate pain points and refine go-to-market strategy</li>
+            </ul>
+          </div>
+          <div class="exp-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-num">04</div>
+          <div class="exp-body">
+            <div class="exp-meta">
+              <span class="exp-date">May – Jun 2025</span>
+              <span class="exp-loc">Miami, FL</span>
+            </div>
+            <h3 class="exp-company">GWM Partners</h3>
+            <p class="exp-role">Wealth Management Analyst Intern</p>
+            <ul class="exp-bullets">
+              <li>Analyzed 10+ Brazil-focused client portfolios and wrote research briefs for asset managers</li>
+              <li>Built internal system organizing 20+ research notes and event takeaways</li>
+              <li>Synthesized macro and market data into cross-border opportunity notes</li>
+              <li>Shadowed a senior sales director across 15+ client interactions</li>
+            </ul>
+          </div>
+          <div class="exp-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-num">05</div>
+          <div class="exp-body">
+            <div class="exp-meta">
+              <span class="exp-date">Mar 2020 – Nov 2022</span>
+              <span class="exp-loc">Miami, FL</span>
+            </div>
+            <h3 class="exp-company">Limitless Shoes</h3>
+            <p class="exp-role">Finance and Inventory Operations Lead</p>
+            <ul class="exp-bullets">
+              <li>Modeled deal profitability across 1,500+ purchases with comps, fees, and expected sell-through</li>
+              <li>Oversaw six-figure cash flows, buy budgets, and working capital allocation</li>
+              <li>Reduced dead inventory by 15%+ through sell-through trend forecasting</li>
+              <li>Produced weekly snapshots tracking revenue, gross margin, inventory, and turnover</li>
+            </ul>
+          </div>
+          <div class="exp-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section id="leadership" class="section section-alt">
+    <div class="container">
+      <div class="section-tag reveal">Community</div>
+      <h2 class="section-title reveal">Service &amp; <em>Leadership</em></h2>
+
+      <div class="leadership-grid">
+
+        <div class="l-card reveal">
+          <div class="l-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="l-card-content">
+            <p class="l-card-date">Sep 2025 – Present</p>
+            <h3>Northeastern University<br/>Entrepreneurs Club</h3>
+            <p class="l-card-role">Member · Boston, MA</p>
+            <ul class="l-bullets">
+              <li>Weekly workshops with 30+ members on ideation, validation, and go-to-market execution</li>
+              <li>Collaborated with 10+ student founders to review pitches and pressure test assumptions</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="l-card reveal">
+          <div class="l-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="l-card-content">
+            <p class="l-card-date">Aug 2020 – May 2024</p>
+            <h3>The Nobis Foundation</h3>
+            <p class="l-card-role">Volunteer · Miami, FL</p>
+            <ul class="l-bullets">
+              <li>Assembled 500+ care packages for underserved communities in Ecuador</li>
+              <li>Coordinated international packaging logistics for community service initiatives</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="l-card reveal">
+          <div class="l-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <div class="l-card-content">
+            <p class="l-card-date">Aug 2023 – May 2024</p>
+            <h3>The Guatemalan-Maya Center</h3>
+            <p class="l-card-role">Student Volunteer · Lake Worth, FL</p>
+            <ul class="l-bullets">
+              <li>Two-week K–8 summer camp serving 80+ low-income students</li>
+              <li>Organized field trips focused on youth development and community empowerment</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="section-tag reveal">Profile</div>
+      <h2 class="section-title reveal">Skills &amp; <em>Interests</em></h2>
+
+      <div class="skills-layout">
+        <div class="skill-group reveal">
+          <h4 class="skill-group-label">Languages</h4>
+          <div class="skill-items">
+            <div class="skill-pill">
+              <span class="skill-name">English</span>
+              <span class="skill-level">Fluent</span>
+            </div>
+            <div class="skill-pill">
+              <span class="skill-name">Spanish</span>
+              <span class="skill-level">Fluent</span>
+            </div>
+            <div class="skill-pill">
+              <span class="skill-name">Portuguese</span>
+              <span class="skill-level">Conversational</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h4 class="skill-group-label">Technical</h4>
+          <div class="skill-items">
+            <div class="skill-pill">Financial Modeling &amp; Valuation</div>
+            <div class="skill-pill">Portfolio Analysis</div>
+            <div class="skill-pill">Excel &amp; Financial Software</div>
+            <div class="skill-pill">Reporting &amp; Analytics</div>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h4 class="skill-group-label">Interests</h4>
+          <div class="skill-items">
+            <div class="skill-pill interest">Capital Markets</div>
+            <div class="skill-pill interest">Behavioral Psychology</div>
+            <div class="skill-pill interest">Poker GTO</div>
+            <div class="skill-pill interest">Russian Literature</div>
+            <div class="skill-pill interest">Brazilian Jiu-Jitsu</div>
+            <div class="skill-pill interest">DJ Mixing</div>
+            <div class="skill-pill interest">Latin American Politics</div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="fc-controls">
-      <button class="btn-secondary" onclick="prevCard()">← Prev</button>
-      <button class="btn-primary" onclick="nextCard()">Next →</button>
-    </div>
-    <div class="fc-progress">
-      <div class="progress-bar"><div id="fc-progress-fill" class="progress-fill"></div></div>
-    </div>
   </section>
 
-  <!-- QUIZ SCREEN -->
-  <section id="quiz-screen" class="screen">
-    <div class="screen-header">
-      <button class="back-btn" onclick="showMenu()">← Back</button>
-      <h2 id="quiz-title">Quiz</h2>
-      <span id="quiz-counter">Q 1/10</span>
-    </div>
-    <div id="quiz-question-wrap">
-      <div class="quiz-category" id="quiz-category"></div>
-      <div class="quiz-question" id="quiz-question"></div>
-      <div class="quiz-options" id="quiz-options"></div>
-      <div class="quiz-feedback" id="quiz-feedback"></div>
-    </div>
-    <div class="quiz-controls">
-      <button class="btn-primary hidden" id="next-q-btn" onclick="nextQuestion()">Next Question →</button>
-    </div>
-    <div class="quiz-score-strip">
-      Score: <strong id="quiz-score">0</strong> | Streak: <strong id="quiz-streak">0</strong>
-    </div>
-    <div class="fc-progress">
-      <div class="progress-bar"><div id="quiz-progress-fill" class="progress-fill"></div></div>
-    </div>
-  </section>
-
-  <!-- PRICE GAME SCREEN -->
-  <section id="price-screen" class="screen">
-    <div class="screen-header">
-      <button class="back-btn" onclick="showMenu()">← Back</button>
-      <h2>Price Guessing Game</h2>
-      <span id="price-counter">1/10</span>
-    </div>
-    <div class="price-watch-card">
-      <div class="watch-emoji" id="price-emoji"></div>
-      <h3 id="price-watch-name"></h3>
-      <p class="price-desc" id="price-watch-desc"></p>
-      <div class="price-tag">Retail Price: <span id="price-reveal" class="hidden-price">???</span></div>
-    </div>
-    <div class="price-options" id="price-options"></div>
-    <div class="price-feedback" id="price-feedback"></div>
-    <div class="quiz-controls">
-      <button class="btn-primary hidden" id="next-price-btn" onclick="nextPrice()">Next Watch →</button>
-    </div>
-    <div class="fc-progress">
-      <div class="progress-bar"><div id="price-progress-fill" class="progress-fill"></div></div>
-    </div>
-  </section>
-
-  <!-- RESULTS SCREEN -->
-  <section id="results-screen" class="screen">
-    <div class="results-wrap">
-      <div class="results-crown">&#9813;</div>
-      <h2 id="results-title">Round Complete!</h2>
-      <div class="results-score-big" id="results-score"></div>
-      <div class="results-grade" id="results-grade"></div>
-      <div class="results-message" id="results-message"></div>
-      <div class="results-stats" id="results-stats"></div>
-      <div class="results-buttons">
-        <button class="btn-primary" onclick="retryModule()">Try Again</button>
-        <button class="btn-secondary" onclick="showMenu()">Main Menu</button>
+  <!-- Contact -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="contact-wrap reveal">
+        <div class="contact-left">
+          <div class="section-tag">Contact</div>
+          <h2 class="section-title">Let's <em>talk</em></h2>
+          <p class="contact-desc">Open to conversations about finance, startups, PE, or anything interesting.</p>
+        </div>
+        <div class="contact-right">
+          <a href="mailto:dibildox.e@northeastern.edu" class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            </div>
+            <div>
+              <p class="contact-card-label">Email</p>
+              <p class="contact-card-val">dibildox.e@northeastern.edu</p>
+            </div>
+            <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+          <a href="tel:3056999713" class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.05 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16z"/></svg>
+            </div>
+            <div>
+              <p class="contact-card-label">Phone</p>
+              <p class="contact-card-val">(305) 699-9713</p>
+            </div>
+            <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/emiliodibildox" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div>
+              <p class="contact-card-label">LinkedIn</p>
+              <p class="contact-card-val">emiliodibildox</p>
+            </div>
+            <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-</div>
+  <footer>
+    <div class="container">
+      <p>There's always something to be grateful for.</p>
+    </div>
+  </footer>
 
-<script src="data.js"></script>
-<script src="game.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
