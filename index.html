@@ -6,159 +6,209 @@
   <title>Emilio Dibildox</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- Cursor glow -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
   <!-- Navigation -->
   <nav id="nav">
     <div class="nav-inner">
-      <a href="#hero" class="nav-logo">ED</a>
+      <a href="#hero" class="nav-logo">
+        <span class="logo-e">E</span><span class="logo-d">D</span>
+      </a>
       <ul class="nav-links">
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#education">Education</a></li>
-        <li><a href="#leadership">Leadership</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact" class="nav-cta">Contact</a></li>
+        <li><a href="#experience" data-text="Experience">Experience</a></li>
+        <li><a href="#leadership" data-text="Leadership">Leadership</a></li>
+        <li><a href="#skills" data-text="Skills">Skills</a></li>
+        <li><a href="#contact" class="nav-cta">Let's Talk</a></li>
       </ul>
-      <button class="nav-toggle" aria-label="Menu">
-        <span></span><span></span><span></span>
+      <button class="nav-toggle" id="navToggle" aria-label="Menu">
+        <span></span><span></span>
       </button>
     </div>
   </nav>
 
   <!-- Mobile menu -->
   <div class="mobile-menu" id="mobileMenu">
-    <ul>
-      <li><a href="#experience" class="mobile-link">Experience</a></li>
-      <li><a href="#education" class="mobile-link">Education</a></li>
-      <li><a href="#leadership" class="mobile-link">Leadership</a></li>
-      <li><a href="#skills" class="mobile-link">Skills</a></li>
-      <li><a href="#contact" class="mobile-link">Contact</a></li>
-    </ul>
+    <div class="mobile-menu-inner">
+      <ul>
+        <li><a href="#experience" class="mobile-link">Experience</a></li>
+        <li><a href="#leadership" class="mobile-link">Leadership</a></li>
+        <li><a href="#skills" class="mobile-link">Skills</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+    </div>
   </div>
 
   <!-- Hero -->
   <section id="hero">
-    <canvas id="particleCanvas"></canvas>
+    <div class="hero-bg">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="grid-overlay"></div>
+    </div>
+
     <div class="hero-content">
-      <p class="hero-eyebrow reveal">Boston, MA</p>
-      <h1 class="hero-name reveal">
-        <span class="first">Emilio</span>
-        <span class="last">Dibildox</span>
-      </h1>
-      <p class="hero-tagline reveal">Finance &amp; Entrepreneurship &nbsp;&middot;&nbsp; Northeastern University</p>
-      <div class="hero-tags reveal">
-        <span>Private Equity</span>
-        <span>Founder</span>
-        <span>Portfolio Analytics</span>
-        <span>Builder</span>
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Available for opportunities
       </div>
-      <div class="hero-actions reveal">
-        <a href="#experience" class="btn-primary">View My Work</a>
+
+      <h1 class="hero-name">
+        <span class="name-line" id="scrambleName">Emilio Dibildox</span>
+      </h1>
+
+      <div class="hero-roles">
+        <span class="role-static">I build things in</span>
+        <div class="role-cycle">
+          <span class="role-item active">Finance</span>
+          <span class="role-item">Private Equity</span>
+          <span class="role-item">Startups</span>
+          <span class="role-item">Analytics</span>
+        </div>
+      </div>
+
+      <p class="hero-desc">
+        International Business student at Northeastern University.<br/>
+        Founder of Onda. Incoming PE analyst at Pine Tree Equity Partners.
+      </p>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" data-count="30">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">User Interviews</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="800">0</span><span class="stat-plus">+</span>
+          <span class="stat-label">Deals Modeled</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num" data-count="3">0</span>
+          <span class="stat-label">Languages</span>
+        </div>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#experience" class="btn-primary">
+          <span>Explore My Work</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
         <a href="#contact" class="btn-ghost">Get in Touch</a>
       </div>
     </div>
-    <div class="hero-scroll">
-      <div class="scroll-line"></div>
+
+    <div class="hero-scroll-hint">
+      <div class="scroll-text">Scroll</div>
+      <div class="scroll-track"><div class="scroll-thumb"></div></div>
     </div>
   </section>
 
   <!-- Experience -->
   <section id="experience" class="section">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Career</span>
-        <h2>Experience</h2>
-      </div>
-      <div class="timeline">
+      <div class="section-tag reveal">Career</div>
+      <h2 class="section-title reveal">Where I've <em>worked</em></h2>
 
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">Jul 2026 &ndash; Aug 2026</div>
-          <div class="timeline-card">
-            <div class="card-header">
-              <div>
-                <h3>Pine Tree Equity Partners</h3>
-                <p class="card-role">Incoming Private Equity Summer Analyst</p>
-              </div>
-              <span class="card-location">Miami, FL</span>
+      <div class="exp-list">
+
+        <div class="exp-item reveal">
+          <div class="exp-num">01</div>
+          <div class="exp-body">
+            <div class="exp-meta">
+              <span class="exp-date">Jul – Aug 2026</span>
+              <span class="exp-loc">Miami, FL</span>
             </div>
+            <h3 class="exp-company">Pine Tree Equity Partners</h3>
+            <p class="exp-role">Incoming Private Equity Summer Analyst</p>
+          </div>
+          <div class="exp-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </div>
         </div>
 
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">Feb 2026 &ndash; Jun 2026</div>
-          <div class="timeline-card">
-            <div class="card-header">
-              <div>
-                <h3>HarbourVest Partners</h3>
-                <p class="card-role">Portfolio Analytics Intern</p>
-              </div>
-              <span class="card-location">Boston, MA</span>
+        <div class="exp-item reveal">
+          <div class="exp-num">02</div>
+          <div class="exp-body">
+            <div class="exp-meta">
+              <span class="exp-date">Feb – Jun 2026</span>
+              <span class="exp-loc">Boston, MA</span>
             </div>
+            <h3 class="exp-company">HarbourVest Partners</h3>
+            <p class="exp-role">Portfolio Analytics Intern</p>
+          </div>
+          <div class="exp-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </div>
         </div>
 
-        <div class="timeline-item reveal">
-          <div class="timeline-dot active"></div>
-          <div class="timeline-date">Sep 2025 &ndash; Present</div>
-          <div class="timeline-card featured">
-            <div class="card-header">
-              <div>
-                <h3>Onda <span class="badge">Founder</span></h3>
-                <p class="card-role">Founder</p>
-              </div>
-              <span class="card-location">Boston, MA</span>
+        <div class="exp-item exp-featured reveal">
+          <div class="exp-num">03</div>
+          <div class="exp-body">
+            <div class="exp-meta">
+              <span class="exp-date">Sep 2025 – Present</span>
+              <span class="exp-loc">Boston, MA</span>
+              <span class="exp-badge">Active</span>
             </div>
-            <ul class="card-bullets">
-              <li>Built and iterated an MVP using Supabase, Stripe, Vercel, and GitHub, incorporating user testing to refine product workflows</li>
-              <li>Designed end-to-end product flows and operating rules to support user verification, dispute prevention, and payouts</li>
-              <li>Defined trust and risk controls across onboarding, messaging, and ticket transfer to reduce fraud and transaction friction</li>
-              <li>Conducted 30+ user interviews to validate pain points and refine go-to-market and monetization strategy</li>
+            <h3 class="exp-company">Onda</h3>
+            <p class="exp-role">Founder</p>
+            <ul class="exp-bullets">
+              <li>Built MVP using Supabase, Stripe, Vercel, and GitHub — iterated through user testing to refine product workflows</li>
+              <li>Designed end-to-end product flows for user verification, dispute prevention, and payouts</li>
+              <li>Defined trust and risk controls across onboarding, messaging, and ticket transfer</li>
+              <li>Conducted 30+ user interviews to validate pain points and refine go-to-market strategy</li>
             </ul>
           </div>
-        </div>
-
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">May 2025 &ndash; Jun 2025</div>
-          <div class="timeline-card">
-            <div class="card-header">
-              <div>
-                <h3>GWM Partners</h3>
-                <p class="card-role">Wealth Management Analyst Intern</p>
-              </div>
-              <span class="card-location">Miami, FL</span>
-            </div>
-            <ul class="card-bullets">
-              <li>Analyzed 10+ Brazil-focused client portfolios and wrote research briefs for strategy discussions with asset managers</li>
-              <li>Built a repeatable internal system organizing 20+ research notes, meeting, and event takeaways</li>
-              <li>Synthesized macro and market data into cross-border opportunity notes to support client coverage</li>
-              <li>Shadowed a senior sales director across 15+ client interactions, observing meeting prep and daily sales operations</li>
-            </ul>
+          <div class="exp-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </div>
         </div>
 
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-date">Mar 2020 &ndash; Nov 2022</div>
-          <div class="timeline-card">
-            <div class="card-header">
-              <div>
-                <h3>Limitless Shoes</h3>
-                <p class="card-role">Finance and Inventory Operations Lead</p>
-              </div>
-              <span class="card-location">Miami, FL</span>
+        <div class="exp-item reveal">
+          <div class="exp-num">04</div>
+          <div class="exp-body">
+            <div class="exp-meta">
+              <span class="exp-date">May – Jun 2025</span>
+              <span class="exp-loc">Miami, FL</span>
             </div>
-            <ul class="card-bullets">
-              <li>Modeled deal profitability across 800+ purchases, incorporating comps, platform fees, shipping, and expected sell-through</li>
-              <li>Oversaw financial operations including six-figure cash flows, buy budgets, and working capital allocation</li>
-              <li>Forecasted demand and optimized re-up decisions using sell-through trends, reducing dead inventory by 15%+</li>
-              <li>Produced weekly performance snapshots tracking revenue, gross margin, inventory, and turnover</li>
+            <h3 class="exp-company">GWM Partners</h3>
+            <p class="exp-role">Wealth Management Analyst Intern</p>
+            <ul class="exp-bullets">
+              <li>Analyzed 10+ Brazil-focused client portfolios and wrote research briefs for asset managers</li>
+              <li>Built internal system organizing 20+ research notes and event takeaways</li>
+              <li>Synthesized macro and market data into cross-border opportunity notes</li>
+              <li>Shadowed a senior sales director across 15+ client interactions</li>
             </ul>
+          </div>
+          <div class="exp-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+          </div>
+        </div>
+
+        <div class="exp-item reveal">
+          <div class="exp-num">05</div>
+          <div class="exp-body">
+            <div class="exp-meta">
+              <span class="exp-date">Mar 2020 – Nov 2022</span>
+              <span class="exp-loc">Miami, FL</span>
+            </div>
+            <h3 class="exp-company">Limitless Shoes</h3>
+            <p class="exp-role">Finance and Inventory Operations Lead</p>
+            <ul class="exp-bullets">
+              <li>Modeled deal profitability across 800+ purchases with comps, fees, and expected sell-through</li>
+              <li>Oversaw six-figure cash flows, buy budgets, and working capital allocation</li>
+              <li>Reduced dead inventory by 15%+ through sell-through trend forecasting</li>
+              <li>Produced weekly snapshots tracking revenue, gross margin, inventory, and turnover</li>
+            </ul>
+          </div>
+          <div class="exp-arrow">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </div>
         </div>
 
@@ -166,71 +216,57 @@
     </div>
   </section>
 
-  <!-- Education -->
-  <section id="education" class="section section-alt">
+  <!-- Leadership -->
+  <section id="leadership" class="section section-alt">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Academic</span>
-        <h2>Education</h2>
-      </div>
-      <div class="edu-card reveal">
-        <div class="edu-left">
-          <h3>Northeastern University</h3>
-          <p class="edu-major">B.S. International Business</p>
-          <p class="edu-minor">Minors: Finance &amp; Interdisciplinary Artificial Intelligence</p>
-        </div>
-        <div class="edu-right">
-          <p class="edu-location">Boston, MA</p>
-          <p class="edu-date">Expected May 2028</p>
-          <p class="edu-gpa">GPA <strong>3.67</strong> / 4.00</p>
-        </div>
-      </div>
-    </div>
-  </section>
+      <div class="section-tag reveal">Community</div>
+      <h2 class="section-title reveal">Service &amp; <em>Leadership</em></h2>
 
-  <!-- Service & Leadership -->
-  <section id="leadership" class="section">
-    <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Community</span>
-        <h2>Service &amp; Leadership</h2>
-      </div>
       <div class="leadership-grid">
 
-        <div class="leadership-card reveal">
-          <div class="lcard-top">
-            <h3>Northeastern University Entrepreneurs Club</h3>
-            <span class="lcard-role">Member</span>
+        <div class="l-card reveal">
+          <div class="l-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <p class="lcard-date">Sep 2025 &ndash; Present &nbsp;&middot;&nbsp; Boston, MA</p>
-          <ul class="card-bullets">
-            <li>Participated in weekly workshops and founder talks with 30+ members focused on ideation, validation, and go-to-market execution</li>
-            <li>Collaborated with 10+ student founders to review pitches, refine positioning, and pressure test key assumptions</li>
-          </ul>
+          <div class="l-card-content">
+            <p class="l-card-date">Sep 2025 – Present</p>
+            <h3>Northeastern University<br/>Entrepreneurs Club</h3>
+            <p class="l-card-role">Member · Boston, MA</p>
+            <ul class="l-bullets">
+              <li>Weekly workshops with 30+ members on ideation, validation, and go-to-market execution</li>
+              <li>Collaborated with 10+ student founders to review pitches and pressure test assumptions</li>
+            </ul>
+          </div>
         </div>
 
-        <div class="leadership-card reveal">
-          <div class="lcard-top">
+        <div class="l-card reveal">
+          <div class="l-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="l-card-content">
+            <p class="l-card-date">Aug 2020 – May 2024</p>
             <h3>The Nobis Foundation</h3>
-            <span class="lcard-role">Volunteer</span>
+            <p class="l-card-role">Volunteer · Miami, FL</p>
+            <ul class="l-bullets">
+              <li>Assembled 500+ care packages for underserved communities in Ecuador</li>
+              <li>Coordinated international packaging logistics for community service initiatives</li>
+            </ul>
           </div>
-          <p class="lcard-date">Aug 2020 &ndash; May 2024 &nbsp;&middot;&nbsp; Miami, FL</p>
-          <ul class="card-bullets">
-            <li>Assembled and distributed 500+ care packages containing food and essential supplies for underserved communities in Ecuador</li>
-            <li>Supported international outreach by coordinating packaging logistics and community-focused service initiatives</li>
-          </ul>
         </div>
 
-        <div class="leadership-card reveal">
-          <div class="lcard-top">
-            <h3>The Guatemalan-Maya Center</h3>
-            <span class="lcard-role">Student Volunteer</span>
+        <div class="l-card reveal">
+          <div class="l-card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
           </div>
-          <p class="lcard-date">Aug 2023 &ndash; May 2024 &nbsp;&middot;&nbsp; Lake Worth, FL</p>
-          <ul class="card-bullets">
-            <li>Supported and coordinated service initiatives including a two-week K&ndash;8 summer camp serving 80+ low-income students</li>
-            <li>Organized educational field trips and enrichment activities focused on youth development and community empowerment</li>
-          </ul>
+          <div class="l-card-content">
+            <p class="l-card-date">Aug 2023 – May 2024</p>
+            <h3>The Guatemalan-Maya Center</h3>
+            <p class="l-card-role">Student Volunteer · Lake Worth, FL</p>
+            <ul class="l-bullets">
+              <li>Two-week K–8 summer camp serving 80+ low-income students</li>
+              <li>Organized field trips focused on youth development and community empowerment</li>
+            </ul>
+          </div>
         </div>
 
       </div>
@@ -238,40 +274,50 @@
   </section>
 
   <!-- Skills -->
-  <section id="skills" class="section section-alt">
+  <section id="skills" class="section">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="section-label">Profile</span>
-        <h2>Skills &amp; Interests</h2>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-block reveal">
-          <h4>Languages</h4>
-          <div class="skill-tags">
-            <span>English &mdash; Fluent</span>
-            <span>Spanish &mdash; Fluent</span>
-            <span>Portuguese &mdash; Conversational</span>
+      <div class="section-tag reveal">Profile</div>
+      <h2 class="section-title reveal">Skills &amp; <em>Interests</em></h2>
+
+      <div class="skills-layout">
+        <div class="skill-group reveal">
+          <h4 class="skill-group-label">Languages</h4>
+          <div class="skill-items">
+            <div class="skill-pill">
+              <span class="skill-name">English</span>
+              <span class="skill-level">Fluent</span>
+            </div>
+            <div class="skill-pill">
+              <span class="skill-name">Spanish</span>
+              <span class="skill-level">Fluent</span>
+            </div>
+            <div class="skill-pill">
+              <span class="skill-name">Portuguese</span>
+              <span class="skill-level">Conversational</span>
+            </div>
           </div>
         </div>
-        <div class="skill-block reveal">
-          <h4>Technical Skills</h4>
-          <div class="skill-tags">
-            <span>Financial Modeling &amp; Valuation</span>
-            <span>Portfolio Analysis</span>
-            <span>Excel &amp; Financial Software</span>
-            <span>Reporting &amp; Analytics</span>
+
+        <div class="skill-group reveal">
+          <h4 class="skill-group-label">Technical</h4>
+          <div class="skill-items">
+            <div class="skill-pill">Financial Modeling &amp; Valuation</div>
+            <div class="skill-pill">Portfolio Analysis</div>
+            <div class="skill-pill">Excel &amp; Financial Software</div>
+            <div class="skill-pill">Reporting &amp; Analytics</div>
           </div>
         </div>
-        <div class="skill-block reveal">
-          <h4>Interests</h4>
-          <div class="skill-tags interests">
-            <span>Capital Markets</span>
-            <span>Behavioral Psychology</span>
-            <span>Poker GTO</span>
-            <span>Russian Literature</span>
-            <span>Brazilian Jiu-Jitsu</span>
-            <span>DJ Mixing</span>
-            <span>Latin American Politics</span>
+
+        <div class="skill-group reveal">
+          <h4 class="skill-group-label">Interests</h4>
+          <div class="skill-items">
+            <div class="skill-pill interest">Capital Markets</div>
+            <div class="skill-pill interest">Behavioral Psychology</div>
+            <div class="skill-pill interest">Poker GTO</div>
+            <div class="skill-pill interest">Russian Literature</div>
+            <div class="skill-pill interest">Brazilian Jiu-Jitsu</div>
+            <div class="skill-pill interest">DJ Mixing</div>
+            <div class="skill-pill interest">Latin American Politics</div>
           </div>
         </div>
       </div>
@@ -281,32 +327,51 @@
   <!-- Contact -->
   <section id="contact" class="section contact-section">
     <div class="container">
-      <div class="contact-inner reveal">
-        <p class="section-label">Let&rsquo;s Connect</p>
-        <h2>Get in Touch</h2>
-        <p class="contact-sub">Open to conversations about finance, entrepreneurship, or anything in between.</p>
-        <div class="contact-links">
-          <a href="mailto:dibildox.e@northeastern.edu" class="contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
-            dibildox.e@northeastern.edu
+      <div class="contact-wrap reveal">
+        <div class="contact-left">
+          <div class="section-tag">Contact</div>
+          <h2 class="section-title">Let's <em>talk</em></h2>
+          <p class="contact-desc">Open to conversations about finance, startups, PE, or anything interesting.</p>
+        </div>
+        <div class="contact-right">
+          <a href="mailto:dibildox.e@northeastern.edu" class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+            </div>
+            <div>
+              <p class="contact-card-label">Email</p>
+              <p class="contact-card-val">dibildox.e@northeastern.edu</p>
+            </div>
+            <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </a>
-          <a href="tel:3056999713" class="contact-item">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.05 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16z"/></svg>
-            (305) 699-9713
+          <a href="tel:3056999713" class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.14 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.05 1.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21 16z"/></svg>
+            </div>
+            <div>
+              <p class="contact-card-label">Phone</p>
+              <p class="contact-card-val">(305) 699-9713</p>
+            </div>
+            <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </a>
-          <a href="https://www.linkedin.com/in/emiliodibildox" target="_blank" rel="noopener" class="contact-item">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
-            linkedin.com/in/emiliodibildox
+          <a href="https://www.linkedin.com/in/emiliodibildox" target="_blank" rel="noopener" class="contact-card">
+            <div class="contact-card-icon">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div>
+              <p class="contact-card-label">LinkedIn</p>
+              <p class="contact-card-val">emiliodibildox</p>
+            </div>
+            <svg class="contact-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>&copy; 2026 Emilio Dibildox</p>
+      <p>&copy; 2026 Emilio Dibildox &nbsp;&middot;&nbsp; Built with intention.</p>
     </div>
   </footer>
 
