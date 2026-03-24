@@ -42,18 +42,6 @@ reveals.forEach((el, i) => {
   revealObserver.observe(el);
 });
 
-/* ─── Role cycling ─────────────────────────────────────────────── */
-const roles = document.querySelectorAll('.role-item');
-let currentRole = 0;
-
-function cycleRoles() {
-  roles[currentRole].classList.remove('active');
-  roles[currentRole].classList.add('exit');
-  setTimeout(() => roles[currentRole].classList.remove('exit'), 500);
-  currentRole = (currentRole + 1) % roles.length;
-  roles[currentRole].classList.add('active');
-}
-setInterval(cycleRoles, 2200);
 
 /* ─── Name scramble on load ────────────────────────────────────── */
 const scrambleEl = document.getElementById('scrambleName');

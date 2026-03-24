@@ -24,7 +24,7 @@ html { scroll-behavior: smooth; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-family: 'DM Sans', system-ui, sans-serif;
   font-weight: 400;
   line-height: 1.7;
   overflow-x: hidden;
@@ -76,7 +76,7 @@ em { font-style: italic; color: var(--blue-bright); }
   justify-content: space-between;
 }
 .nav-logo {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-weight: 800;
   font-size: 1.4rem;
   letter-spacing: -0.02em;
@@ -154,7 +154,7 @@ em { font-style: italic; color: var(--blue-bright); }
 .mobile-menu.open { display: flex; }
 .mobile-menu ul { display: flex; flex-direction: column; gap: 2.5rem; text-align: center; }
 .mobile-menu a {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 2rem;
   font-weight: 700;
   color: var(--text-muted);
@@ -251,65 +251,83 @@ em { font-style: italic; color: var(--blue-bright); }
 }
 
 .hero-name {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(3.5rem, 10vw, 8rem);
-  font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.03em;
-  margin-bottom: 1.5rem;
-  background: linear-gradient(135deg, #fff 30%, var(--blue-bright) 100%);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(4rem, 11vw, 9.5rem);
+  font-weight: 700;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 1.4rem;
+  background: linear-gradient(150deg, #ffffff 20%, #c7d9f8 60%, var(--blue-bright) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: fadeDown 0.8s 0.2s both;
 }
 
-.hero-roles {
+.hero-tagline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-weight: 400;
+  font-style: italic;
+  color: var(--text-dim);
+  margin-bottom: 2.2rem;
+  letter-spacing: 0.01em;
+  animation: fadeDown 0.8s 0.35s both;
+}
+.hero-tagline em {
+  font-style: italic;
+  color: var(--blue-bright);
+  -webkit-text-fill-color: var(--blue-bright);
+}
+
+.hero-identity {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  font-size: clamp(1rem, 2.5vw, 1.3rem);
-  font-weight: 300;
-  color: var(--text-dim);
-  margin-bottom: 1.5rem;
-  animation: fadeDown 0.8s 0.35s both;
   flex-wrap: wrap;
+  gap: 0;
+  margin-bottom: 2.8rem;
+  animation: fadeDown 0.8s 0.45s both;
+  padding: 1.4rem 2rem;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(10,22,40,0.6);
+  backdrop-filter: blur(12px);
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
 }
-.role-cycle {
-  position: relative;
-  height: 1.7em;
-  overflow: hidden;
-  min-width: 180px;
-  text-align: left;
+.identity-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.5rem 1.5rem;
+  flex: 1;
+  min-width: 150px;
 }
-.role-item {
-  position: absolute;
-  top: 0; left: 0;
-  color: var(--blue-bright);
-  font-weight: 600;
-  opacity: 0;
-  transform: translateY(100%);
-  transition: all 0.5s var(--ease);
-  white-space: nowrap;
+.identity-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--blue);
+  font-weight: 500;
 }
-.role-item.active {
-  opacity: 1;
-  transform: translateY(0);
+.identity-val {
+  font-size: 0.85rem;
+  color: var(--text);
+  font-weight: 400;
+  text-align: center;
+  line-height: 1.4;
 }
-.role-item.exit {
-  opacity: 0;
-  transform: translateY(-100%);
+.identity-divider {
+  width: 1px;
+  height: 36px;
+  background: var(--border);
+  flex-shrink: 0;
 }
 
-.hero-desc {
-  font-size: clamp(0.9rem, 1.8vw, 1rem);
-  color: var(--text-muted);
-  line-height: 1.8;
-  max-width: 500px;
-  margin: 0 auto 2.5rem;
-  animation: fadeDown 0.8s 0.45s both;
-}
+.reveal-hero { animation: fadeDown 0.8s 0.35s both; }
 
 .hero-stats {
   display: flex;
@@ -321,14 +339,14 @@ em { font-style: italic; color: var(--blue-bright); }
 }
 .stat { text-align: center; }
 .stat-num {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 2rem;
   font-weight: 800;
   color: var(--blue-bright);
   line-height: 1;
 }
 .stat-plus {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.4rem;
   font-weight: 800;
   color: var(--blue);
@@ -362,7 +380,7 @@ em { font-style: italic; color: var(--blue-bright); }
   padding: 0.85rem 2rem;
   background: var(--blue);
   color: #fff;
-  font-family: 'Space Grotesk', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-size: 0.88rem;
   font-weight: 600;
   border-radius: 10px;
@@ -460,7 +478,7 @@ em { font-style: italic; color: var(--blue-bright); }
   margin-bottom: 1rem;
 }
 .section-title {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: clamp(2.2rem, 5vw, 3.5rem);
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -507,7 +525,7 @@ em { font-style: italic; color: var(--blue-bright); }
 .exp-item:hover .exp-company { color: var(--blue-bright); }
 
 .exp-num {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 0.7rem;
   font-weight: 700;
   color: var(--text-muted);
@@ -549,7 +567,7 @@ em { font-style: italic; color: var(--blue-bright); }
   background: rgba(74,222,128,0.06);
 }
 .exp-company {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.3rem;
   font-weight: 700;
   letter-spacing: -0.01em;
@@ -568,7 +586,6 @@ em { font-style: italic; color: var(--blue-bright); }
   gap: 0.45rem;
   margin-top: 0.8rem;
 }
-.exp-featured .exp-bullets { display: flex; }
 .exp-bullets li {
   font-size: 0.83rem;
   color: var(--text-dim);
@@ -654,7 +671,7 @@ em { font-style: italic; color: var(--blue-bright); }
   margin-bottom: 0.4rem;
 }
 .l-card h3 {
-  font-family: 'Syne', sans-serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
   font-size: 1.05rem;
   font-weight: 700;
   line-height: 1.3;
