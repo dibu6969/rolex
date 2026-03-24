@@ -318,13 +318,68 @@ em { font-style: italic; color: var(--blue-bright); }
   color: var(--text);
   font-weight: 400;
   text-align: center;
-  line-height: 1.4;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: nowrap;
+  justify-content: center;
+  white-space: nowrap;
 }
 .identity-divider {
   width: 1px;
   height: 36px;
   background: var(--border);
   flex-shrink: 0;
+}
+
+/* Status badges */
+.status-active, .exp-status.active {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3em;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #22c55e;
+  background: rgba(34,197,94,0.1);
+  border: 1px solid rgba(34,197,94,0.3);
+  padding: 0.15em 0.55em;
+  border-radius: 99px;
+  flex-shrink: 0;
+}
+.status-active::before, .exp-status.active::before {
+  content: '';
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #22c55e;
+  flex-shrink: 0;
+  animation: pulse-green 1.8s ease-in-out infinite;
+}
+@keyframes pulse-green {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(0.65); }
+}
+.status-upcoming, .exp-status.upcoming {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.58rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--blue-bright);
+  background: rgba(96,165,250,0.1);
+  border: 1px solid rgba(96,165,250,0.28);
+  padding: 0.15em 0.55em;
+  border-radius: 99px;
+  flex-shrink: 0;
+}
+.exp-status {
+  vertical-align: middle;
+  margin-left: 0.5rem;
 }
 
 .reveal-hero { animation: fadeDown 0.8s 0.35s both; }
